@@ -1,5 +1,5 @@
 import * as prompts from "./prompts";
-import { ChatGPTAPI } from "chatgpt";
+import { AzureChatGPTAPI } from "@freistli/azurechatgptapi";
 import { ChatGPTPromptParams, ChatGPTPromptsClient } from "./types";
 
 /**
@@ -10,8 +10,8 @@ import { ChatGPTPromptParams, ChatGPTPromptsClient } from "./types";
  * @see {@link https://github.com/transitive-bullshit/chatgpt-api/blob/main/docs/classes/ChatGPTAPI.md#constructor}
  *
  */
-const createChatGPTPrompt: ChatGPTPromptsClient = (params) => {
-  const instance = new ChatGPTAPI(params as ChatGPTPromptParams);
+const createChatGPTPrompt: ChatGPTPromptsClient = (api) => {
+  const instance = api;
 
   return {
     ...prompts.linuxTerminal(instance),

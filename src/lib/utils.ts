@@ -1,21 +1,18 @@
-import { ChatGPTAPI, ChatMessage } from "chatgpt";
+import { AzureChatGPTAPI, ChatMessage } from "@freistli/azurechatgptapi";
 
-let parentMessageId: string | undefined;
-
-export const createPromptFactory = (instance: ChatGPTAPI, prompt: string) => {
-  return async (message: string) => {
+export const createPromptFactory = (instance: AzureChatGPTAPI, prompt: string) => {
+  return async (message: string, messageId: string) => {
     let res: ChatMessage | undefined;
 
-    if (!parentMessageId) {
+    if (!messageId) {
       res = await instance.sendMessage(prompt);
-      parentMessageId = res.id;
+      messageId= res.id;
     }
+    
 
     res = await instance.sendMessage(message, {
-      parentMessageId,
+      parentMessageId: messageId
     });
-
-    parentMessageId = res.id;
 
     return res;
   };

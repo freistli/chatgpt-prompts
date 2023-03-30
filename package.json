@@ -1,7 +1,8 @@
 {
-  "name": "chatgpt-prompts",
-  "version": "3.0.0",
-  "description": "A NodeJS ChatGPT prompts library",
+  "name": "@freistli/azure-chatgpt-prompts",
+  "version": "0.0.4",
+  "description": "A NodeJS ChatGPT prompts library for Azure OpenAI ChatGPT, based on chatgpt-prompts npm",
+  "author": "fauna179@hotmail.com",
   "type": "module",
   "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
@@ -29,14 +30,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pacholoamit/chatgpt-prompts.git"
+    "url": "git+https://github.com/freistli/chatgpt-prompts.git"
   },
-  "author": "pacholo amit",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pacholoamit/chatgpt-prompts/issues"
-  },
-  "homepage": "https://github.com/pacholoamit/chatgpt-prompts#readme",
+  "homepage": "https://github.com/freistli/chatgpt-prompts/#readme",
   "devDependencies": {
     "@jest/globals": "^29.4.3",
     "@types/lodash": "^4.14.191",
@@ -54,7 +51,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "chatgpt": "^5.1.2"
+    "@freistli/azurechatgptapi":"0.1.0"
   },
   "keywords": [
     "openai",
@@ -71,5 +68,9 @@
     "ai",
     "ml",
     "bot"
-  ]
+  ],
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  }
 }
