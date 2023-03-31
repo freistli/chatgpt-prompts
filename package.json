@@ -1,6 +1,6 @@
 {
   "name": "@freistli/azure-chatgpt-prompts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A NodeJS ChatGPT prompts library for Azure OpenAI ChatGPT, based on chatgpt-prompts npm",
   "author": "fauna179@hotmail.com",
   "type": "module",
