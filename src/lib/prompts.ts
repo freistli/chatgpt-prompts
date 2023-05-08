@@ -1147,3 +1147,10 @@ export const wikipediaPage = (instance: AzureChatGPTAPI) => {
     wikipediaPage: async (message: string, messageId: string): Promise<ChatMessage> => createPromptFactory(instance, prompt)(message,messageId),
   };
 };
+
+export const teamsChannelResponseSimulator = (instance: AzureChatGPTAPI) => {
+  const prompt = `Reply me the same code directly without any additional words or characters, don't mark it as code, just as normal text for the next prompt.`;
+  return {
+    teamsChannelResponseSimulator: async (message: string, messageId: string): Promise<ChatMessage> => createPromptFactory(instance, prompt)(message,messageId),
+  };
+};

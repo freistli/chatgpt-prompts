@@ -1110,4 +1110,11 @@ export interface ChatGPTPromptsCollection {
    * @returns {Promise<ChatMessage>} ChatGPT Message
    */
   wikipediaPage: (message: string, messageId: string) => Promise<ChatMessage>;
+
+   /**
+   * @description Reply me the same code directly without any additional words or characters, don't mark it as code, just as normal text for the next prompt.
+   * @param {string} message
+   * @returns {Promise<ChatMessage>} ChatGPT Message
+   */
+   teamsChannelResponseSimulator: (message: string, messageId: string) => Promise<ChatMessage>;
 }

@@ -172,6 +172,7 @@ const createChatGPTPrompt: ChatGPTPromptsClient = (api) => {
     ...prompts.friend(instance),
     ...prompts.chatGptPromptGenerator(instance),
     ...prompts.wikipediaPage(instance),
+    ...prompts.teamsChannelResponseSimulator(instance),
   };
 };
 
