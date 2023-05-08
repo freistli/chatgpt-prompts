@@ -10,17 +10,16 @@ export const createPromptFactory = (instance: AzureChatGPTAPI, prompt: string) =
       }
       else 
       {
-          if(prompt)
           res = await instance.sendMessage(prompt, {
             parentMessageId: messageId
           });
-          messageId= res.id;      
-        
-          res = await instance.sendMessage(message, {
-            parentMessageId: messageId
-          });
-        
+          messageId= res.id;              
       }
+      
+      if(message.trim())
+      res = await instance.sendMessage(message, {
+        parentMessageId: messageId
+      });    
     }
     catch(e)
     {
